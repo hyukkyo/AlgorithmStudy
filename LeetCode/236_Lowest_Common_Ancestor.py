@@ -15,6 +15,11 @@ class Solution(object):
         """
         # LCA는 최소 공통 조상을 말함
         # LCA(p, q) = 자식노드 p와 q의 가장 가까운 부모 노드
+
+        if root.left == p and root.right == q:
+            return root
+        
+        
         
 
 
