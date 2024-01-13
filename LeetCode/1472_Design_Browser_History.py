@@ -1,3 +1,5 @@
+# 링크드 리스트를 활용해 풀어보기
+
 class BrowserHistory(object):
 
     def __init__(self, homepage):
