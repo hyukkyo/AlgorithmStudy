@@ -1,19 +1,25 @@
 # 링크드 리스트를 활용해 풀어보기
 
+class Node(object):
+    def __init__(self, value = 0, next = None):
+        self.value = value
+        self.next = next
+
 class BrowserHistory(object):
 
     def __init__(self, homepage):
         """
         :type homepage: str
         """
-
-        
+        Node(homepage, None)
 
     def visit(self, url):
         """
         :type url: str
         :rtype: None
         """
+        
+        Node(url, None)
         
 
     def back(self, steps):
