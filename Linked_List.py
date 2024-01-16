@@ -93,3 +93,6 @@ ll.print()
 ll.remove(3)
 ll.print()
 print(ll.get(2))
+
+# 노드가 next만 있는걸 singly 링크드리스트
+# 노드가 next와 prev를 가지면 doubly 링크드리스트
