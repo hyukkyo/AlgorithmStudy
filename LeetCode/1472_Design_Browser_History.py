@@ -8,8 +8,6 @@ class Node(object):
 
 class BrowserHistory(object):
     def __init__(self, homepage):
-        self.head = None
-        self.tail = None
         self.current_node = None
         self.size = 0
 
@@ -17,16 +15,11 @@ class BrowserHistory(object):
     def visit(self, url):
         new_node = Node(url, None, None)
         
-        if self.head:
-            self.tail.next = new_node
-            new_node.prev = self.tail
-            self.tail = new_node
-            self.current_node = new_node
-            self.size += 1
+        if self.current_node:
+            pass
         else:
-            self.head = new_node
-            self.tail = new_node
-            self.size = 1
+            self.current_node = new_node
+            
         
 
     def back(self, steps):
