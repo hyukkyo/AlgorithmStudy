@@ -32,3 +32,5 @@ class Solution(object):
             
 
 print(Solution.twoSum(self=Solution, nums=[4,1,9,7,8,2], target=14))
+
+# 아 리트코드에 문제가 다르네?
