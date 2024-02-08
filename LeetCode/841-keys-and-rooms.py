@@ -1,3 +1,5 @@
+# DFS
+
 def canVisitAllRooms(rooms):
     pass
 
