@@ -25,7 +25,7 @@ graph = {
     7:[(7,6), (9,8)],
     8:[]
 }
-dijkstra(graph, 1, 8)   
+dijkstra(graph, 1, 8)
 
 
 # 템플릿처럼 외우기
