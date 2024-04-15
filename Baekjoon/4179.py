@@ -21,7 +21,7 @@ def bfs(x, y, visited):
         for i in range(4):
             nx = cx + dx[i]
             ny = cy + dy[i]
-            if 0<=nx<r and 0<=ny<c and not visited[r][c]:
+            if 0<=nx<r and 0<=ny<c and not visited[nx][ny]:
                 pass
 
 
@@ -33,7 +33,7 @@ while True:
 
     for i in range(r):
         for j in range(c):
-            if not visited[r][c]:
+            if visited[r][c] == False:
                 visited = True
                 bfs(i, j, visited)
 
