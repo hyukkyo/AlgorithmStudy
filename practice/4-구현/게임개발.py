@@ -16,15 +16,45 @@ for i in range(row):
     grid.append(grid_row)
 
 # print(grid)
+visited = [[0] * column for _ in range(row)]
+visited[cr][cc] = 1
 
 dr = [-1, 0, 1, 0]
 dc = [0, 1, 0, -1]
 
+def turn_left():
+    global d
+    d = (d+3) % 4
 
-# 현재 위치에서 방향 탐색
-for i in range(4):
-    nd = (d + 3) % 4 # 다음 방향
-    nr = cr + dr[nd]
-    nc = cc + dc[nd]
 
+count = 1 # 이동 횟수
+turn_time = 0 # 탐색한 방향 갯수
+while True:
+    turn_left()
+    nr = cr + dr[d]
+    nc = cc + dc[d]
+
+    if grid[nr][nc] == 0 and visited[nr][nc] == 0:
+        visited[nr][nc] = 1
+        cr = nr
+        cc = nc
+        count += 1
+        turn_time = 0
+        continue
+    else: # 해당 방향으로 못가면
+        turn_time += 1
     
+    if turn_time == 4: # 더 못가면 뒤로가기
+        nr = cr - dr[d]
+        nc = cc - dc[d]
+        if grid[nr][nc] == 0: # 뒤로갈수있어?
+            cr = nr
+            cc = nc
+        
+        else: # 뒤로 못가나?
+            break
+
+        turn_time = 0
+        
+
+print(count)
