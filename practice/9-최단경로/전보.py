@@ -20,13 +20,14 @@ def dijkstra(start):
         # 남은 애들중에 가장 거리가 짧은 애가 튀어나옴
         dist, now = heapq.heappop(q)
 
-        # 가장 최단거리가 짧은 노드에 대한 정보를 꺼내기
+        # 현재 최단거리보다 큰애가 나오면 걍 넘어감
         if distance[now] < dist:
             continue
 
         for i in graph[now]:
             cost = dist + i[1]
 
+            # 2에 들어있는 최단거리보다, 1을 거치고 2를 간 cost가 더 빠르면
             if cost < distance[i[0]]:
                 distance[i[0]] = cost
                 heapq.heappush(q, (cost, i[0]))
