@@ -7,11 +7,5 @@ def solution(jobs):
     current_time = 0
     start = -1
 
-    i = 0
-    while i < len(jobs):
-
-        for job in jobs:
-            if start < job[0] < current_time:
-                heapq.heappush(min_heap, (job[1], job[0]))
-        
-    return answer
+    # 핵심
+    # 현재 시각에서 시작가능한 프로세스들 중에서, 소요시간이 가장 짧은 프로세스를 실행하면 됨
